@@ -15,8 +15,8 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.BeschreibungText, new { @class = "control-label col-md-2"})
                 <div>
-                    @Html.EditorFor(model => model.BeschreibungText)
-                    @Html.ValidationMessageFor(model => model.BeschreibungText)
+                    @Html.EditorFor(model => model.BeschreibungText, new { htmlAttribute = new {@class ="form-control", required = "required", title = "Die aufgabe muss mindesten 10 Zeichen lang sein."}})
+                    @Html.ValidationMessageFor(model => model.BeschreibungText, "", new { @class = "text-danger"})
                 </div>
             </div>
             <br />
@@ -24,7 +24,7 @@
                 @Html.LabelFor(model => model.AbgabeTime, new { @class = "control-label col-md-2"})
                 <div>
                     @Html.EditorFor(model => model.AbgabeTime)
-                    @Html.ValidationMessageFor(model => model.AbgabeTime)
+                    @Html.ValidationMessageFor(model => model.AbgabeTime, "", new { @class = "text-danger"})
                 </div>
             </div>
             <br />
