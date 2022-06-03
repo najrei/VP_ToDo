@@ -16,14 +16,16 @@ namespace Todo.Controllers
 
         public ErledigtController(TodoContext context)
         {
+           
             _context = context;
         }
 
         // GET: Erledigt
         public async Task<IActionResult> Index()
         {
-              return _context.Aufgabe != null ? 
-                          View(await _context.Aufgabe.ToListAsync()) :
+
+            return _context.Aufgabe != null ? 
+                          View(await _context.Aufgabe.Where(model => model.Erledigt == true).ToListAsync()) :
                           Problem("Entity set 'TodoContext.Aufgabe'  is null.");
         }
 

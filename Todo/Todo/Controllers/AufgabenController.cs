@@ -23,7 +23,7 @@ namespace Todo.Controllers
         public async Task<IActionResult> Index()
         {
               return _context.Aufgabe != null ? 
-                          View(await _context.Aufgabe.ToListAsync()) :
+                          View(await _context.Aufgabe.Where(model => model.Erledigt == false).ToListAsync()) :
                           Problem("Entity set 'TodoContext.Aufgabe'  is null.");
         }
 

@@ -16,26 +16,26 @@ namespace Todo.SeedData
             {
                 if (context.Aufgabe.Any())
                 {
-                    return;
+                    return; 
                 }
 
                 context.Aufgabe.AddRange(
                     new Aufgabe
                     {
-                        BeschreibungText = "Kurz",
+                        BeschreibungText = "Ich bin eine Vergessene Aufgabe",
                         Erledigt = false,
-                        AbgabeTime = DateTime.Parse("2022-06-09")
+                        AbgabeTime = DateTime.Parse("2022-01-09")
           
                     },
                     new Aufgabe
                     {
-                        BeschreibungText = "Wohungs Saugen",
+                        BeschreibungText = "Ich bin eine neue Aufgabe",
                         Erledigt = false,
-                        AbgabeTime = DateTime.Parse("2022-06-10")
+                        AbgabeTime = DateTime.Parse("2022-10-10")
                     },
                     new Aufgabe
                     {
-                        BeschreibungText = "Einkaufen gehen",
+                        BeschreibungText = "Ich bin eine erledigte Aufgabe",
                         Erledigt = true,
                         AbgabeTime = DateTime.Parse("2022-06-10")
                     }
